@@ -1,0 +1,20 @@
+version: "2.0"
+nlu:
+- intent: saludo
+  examples: |
+    - hola
+    - buenos dias
+
+- intent: despedida
+  examples: |
+    - adiós
+    - hasta luego
+
+- intent: preguntar_canal
+  examples: |
+    - ¿qué canal es este?
+    - ¿de qué canal se trata?
+    - ¿qué canal es?
+    - ¿de qué canal hablamos?
+    - ¿cuál es el canal?
+    - ¿qué canal es este
