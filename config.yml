@@ -1,0 +1,26 @@
+recipe: default.v1
+language: es
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer          # palabras
+    OOV_token: OOV
+  - name: CountVectorsFeaturizer          # chars
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+    model_confidence: linear_norm
+  - name: EntitySynonymMapper
+  - name: FallbackClassifier
+    threshold: 0.80
+    ambiguity_threshold: 0.05
+
+policies:
+  - name: RulePolicy
+    core_fallback_threshold: 0.6
+    core_fallback_action_name: "action_llm_reply"

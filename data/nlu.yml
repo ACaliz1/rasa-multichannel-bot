@@ -1,0 +1,54 @@
+version: "2.0"
+nlu:
+- intent: saludo
+  examples: |
+    - hola
+    - hola!
+    - holaaa
+    - buenas
+    - buenos dias
+    - buenos días
+    - qué tal
+    - hey
+    - buenas tardes
+    - buenas noches
+
+- intent: despedida
+  examples: |
+    - adiós
+    - hasta luego
+    - chao
+    - nos vemos
+    - me voy
+    - hasta pronto
+    - que tengas buen día
+
+- intent: preguntar_canal
+  examples: |
+    - ¿qué canal es este?
+    - ¿de qué canal se trata?
+    - ¿qué canal es?
+    - ¿de qué canal hablamos?
+    - ¿cuál es el canal?
+    - ¿por qué canal estamos?
+    - dime el canal actual
+    - en qué canal estoy
+    - canal?
+
+- intent: out_of_scope
+  examples: |
+    - asdkj asdjka 123123 ???!!!
+    - cuánto pesa el silencio de una nube
+    - lorem ipsum dolor sit amet
+    - 🧪🤖🥴
+    - %$·$·$ no entiendo
+    - mi tostadora habla francés
+    - 9999999999999
+    - escribe un poema sobre sandías cuadradas
+    - define flarghobast en modo turbo
+    - ¿cuántos elefantes caben en un wifi?
+    - esto no tiene nada que ver
+    - qué opinas de los dragones invisibles
+    - XJ-17 proto alfa beta
+    - ~~////~~
+    - [ruido] [texto raro] [####]

@@ -1,0 +1,35 @@
+version: "2.0"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+
+intents:
+  - saludo
+  - despedida
+  - preguntar_canal
+  - out_of_scope
+  - nlu_fallback
+
+slots:
+  canal_actual:
+    type: text
+    influence_conversation: false
+
+responses:
+  utter_saludo:
+    - text: ¡Hola desde whatsapp!
+      channel: whatsapp
+    - text: ¡Hola desde cualquier otro canal!
+
+  utter_despedida:
+    - text: Adiós desde whatsapp!
+      channel: whatsapp
+    - text: Adiós desde cualquier otro canal!
+
+  utter_info_canal:
+    - text: "El canal actual es: {canal_actual}"
+
+actions:
+  - action_set_canal_actual
+  - action_llm_reply

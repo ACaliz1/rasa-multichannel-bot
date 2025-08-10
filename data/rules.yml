@@ -1,0 +1,28 @@
+version: "2.0"
+rules:
+  - rule: Saludo
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+
+  - rule: Despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+
+  - rule: Informar canal
+    steps:
+      - intent: preguntar_canal
+      - action: action_set_canal_actual
+      - action: utter_info_canal
+
+  - rule: Fallback con LLM
+    steps:
+      - intent: nlu_fallback
+      - action: action_llm_reply
+
+  - rule: Out of scope -> LLM
+    steps:
+      - intent: out_of_scope
+      - action: action_llm_reply
+
